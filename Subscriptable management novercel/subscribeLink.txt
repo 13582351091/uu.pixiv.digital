@@ -1,0 +1,3 @@
+2995138709@qq.com,https://sub3.smallstrawberry.com/api/v1/client/subscribe?token=5ce06d4a89ee4ba48d952cea94bf6b24
+3357172372@qq.com,https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=9f348137d8124fc7b278c48f834cc77e
+971205295@qq.com,https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=8eaf50ae5b344dc590843ef84437503a
