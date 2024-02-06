@@ -11,7 +11,7 @@ router = APIRouter()
 @router.get('/')
 def getNode()->str:
     getNodeBaseUrl = config["getNodeBaseUrl"]
-    randomSubscribeUrl = requests.get(getNodeBaseUrl)
+    randomSubscribeUrl = requests.get(getNodeBaseUrl).text
     NodeList = dump_configs(randomSubscribeUrl)
     NodeStr = RandomNode(NodeList)
     return NodeStr
