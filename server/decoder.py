@@ -83,8 +83,8 @@ def _get_listencoded_cfg_from_encoded_str(encoded_str: str) -> List[EncodedCfg]:
 
 def decode_url_to_configs(url: str)->list:
     encoded_str = _get_resource_from_url(url)
-    ##https://github.com/CareyWang/sub-web æåç¨è¿ä¸ªè®¢éè§£æè§£å³äºè®¢éè¢«cfæ ¼æ¡é®é¢ï¼ä¸å¯ç¨äºsspanel
-    lst_encoded_cfg = _get_listencoded_cfg_from_encoded_str(encoded_str)#lst_encoded_cfgè§£æä¸ºèç¹åçåè¡¨,åå«ææèç¹é¾æ¥
+    ##https://github.com/CareyWang/sub-web 成功用这个订阅解析解决了订阅被cf格挡问题，且可用于sspanel
+    lst_encoded_cfg = _get_listencoded_cfg_from_encoded_str(encoded_str)#lst_encoded_cfg解析为节点后的列表,包含所有节点链接
     return lst_encoded_cfg
 
 

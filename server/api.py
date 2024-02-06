@@ -8,7 +8,7 @@ app = FastAPI()
 async def read_root() -> dict:
     return config
 
-#å¨å±è·¯ç±
+#全局路由
 app.include_router(GetNodeRouter, prefix="/getNode")
 
 
