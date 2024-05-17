@@ -43,7 +43,7 @@ class ListDecoder(BaseDecoder):
                 (4 - len(_config_str) % 4) * "="
             )
 
-            if "best" or "com" in _encoded_config_str and '25' not in nameinfo: 
+            if "best" or "com" in _encoded_config_str and '25' not in nameinfo and '0.0.0.0' not in _encoded_config_str: 
                 if "allowInsecure" in _encoded_config_str:
                      yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+"随机节点"
                 else:
