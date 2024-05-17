@@ -45,13 +45,13 @@ class ListDecoder(BaseDecoder):
 
             if "best" or "com" in _encoded_config_str and '25' not in nameinfo: 
                 if "allowInsecure" in _encoded_config_str:
-                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp====', '')+"#"+"随机节点"
+                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+"随机节点"
                 else:
                      yield _encoded_config_str.replace('type=tcp==', '')+"&allowInsecure=1"+"#"+"随机节点"
 
             if "trojan" in config_str and '0.0.0.0' not in config_str:
                 if "allowInsecure" in config_str:
-                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp====', '')+"#"+"随机节点"
+                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+"随机节点"
                 else:
                     yield _encoded_config_str.replace('type=tcp==', '')+"&allowInsecure=1"+"#"+"随机节点"
 
