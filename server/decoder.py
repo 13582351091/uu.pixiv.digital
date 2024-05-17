@@ -38,13 +38,25 @@ class ListDecoder(BaseDecoder):
             if "#" in _config_str:
                 _config_str, nameinfo = _config_str.split("#", 1)
                 nameinfo = parse.unquote(nameinfo)
+
             _encoded_config_str = _config_str + (
                 (4 - len(_config_str) % 4) * "="
             )
-            if "cdn" in _encoded_config_str:
-                yield _encoded_config_str.replace('type=tcp====', '')+"#"+nameinfo
+
+            if "best" or "com" in _encoded_config_str and '25' not in nameinfo: 
+                if "allowInsecure" in _encoded_config_str:
+                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1')+"#"+"随机节点"
+                yield _encoded_config_str.replace('type=tcp====', '')+"&allowInsecure=1"+"#"+"随机节点"
+
+            if "trojan" in config_str :
+                if "allowInsecure" in config_str:
+                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1')+"#"+"随机节点"
+                yield _encoded_config_str.replace('type=tcp====', '')+"&allowInsecure=1"+"#"+"随机节点"
+
             if ("vmess" in config_str):
-                yield config_str
+                yield config_str.replace('allowInsecure=0', 'allowInsecure=1')
+
+
 
 
 class ConfigDecoder(BaseDecoder):
