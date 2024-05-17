@@ -13,6 +13,7 @@ def getNode()->str:
     getNodeBaseUrl = config["getNodeBaseUrl"]
     randomSubscribeUrl = requests.get(getNodeBaseUrl).text.strip('"')
     NodeList = dump_configs(randomSubscribeUrl)
+    print("nodelist是"+NodeList)
     NodeStr = RandomNode(NodeList)
     return NodeStr
 
