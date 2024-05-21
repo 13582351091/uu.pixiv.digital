@@ -1,7 +1,7 @@
 {
     "baseUrl":"http://47.236.235.61:9000",
     "purchaseLinkBase":"https://afdian.net/order/create?product_type=1",
-    "planID": "60063e8a381211eea52952540025c377",
-    "skuID": "600a3896381211ee96cd52540025c377",
+    "planID": "ef3c43c6daa411ee965e5254001e7c00",
+    "skuID": "ef440afcdaa411ee9e165254001e7c00",
     "getNodeBaseUrl": "http://47.236.235.61:5001/randomSubscribeUrl"
 }
