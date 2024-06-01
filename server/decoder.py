@@ -45,7 +45,6 @@ class ListDecoder(BaseDecoder):
 
             if ((("best" or "com" in _encoded_config_str) and '25' not in nameinfo and '香港' not in nameinfo) and "0.0.0.0" not in _encoded_config_str):
                 if "allowInsecure" in _encoded_config_str:
-                if "allowInsecure" in _encoded_config_str:
                      yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+"随机节点"
                 else:
                      yield _encoded_config_str.replace('type=tcp==', '')+"&allowInsecure=1"+"#"+"随机节点"
