@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import requests
+from utils import headers
 
 
 class Resource:
@@ -10,7 +11,7 @@ class Resource:
         self._get_resource()
 
     def _get_resource(self) -> None:
-        request = requests.get(self.url)
+        request = requests.get(self.url,headers=headers)
         self.cutted_str = request.text
 
     def get_encoded_data(self) -> str:
