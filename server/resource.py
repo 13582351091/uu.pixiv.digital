@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import requests
-from utils import headers
+from .utils import headers
 
 
 class Resource:
