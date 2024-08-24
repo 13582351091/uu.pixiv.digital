@@ -24,7 +24,7 @@ headers = {
 
 
 def is_subscription_link_valid(subscribeUrl: str) -> bool:
-    result = requests.get(subscribeUrl, headers=headers).text
+    result = requests.get(subscribeUrl,headers=headers).text
     if "error" in result:
         return False
     return True
@@ -91,8 +91,8 @@ router = APIRouter()
 def returnRandomSubscribeUrl(background_tasks: BackgroundTasks) -> str:
     # 返回一个可用的订阅链接信息
     SubscribeUrlList = subscription_link_list(fileName)
-    validSubscribeUrlList = subscription_link_valid_list(SubscribeUrlList)
-    result = randomSubscribeUrl(validSubscribeUrlList)
+    #直接用现成的认为可用然后直接返回，之后再删不可用的
+    result = randomSubscribeUrl(SubscribeUrlList)
     background_tasks.add_task(delete_invalid_url_in_txt, fileName)
     return result
 
