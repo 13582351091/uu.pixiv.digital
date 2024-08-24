@@ -50,7 +50,7 @@ class ListDecoder(BaseDecoder):
                 else:
                     yield _encoded_config_str.replace('type=tcp==', '')+"&allowInsecure=1"+"#"+"随机节点"
 
-            if ("vmess" in config_str):
+            if ("vmess" in config_str) and ('倍率提示'not in nameinfo)and('导航' not in nameinfo):
                 yield config_str.replace('allowInsecure=0', 'allowInsecure=1')
 
 
