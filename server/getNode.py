@@ -3,7 +3,7 @@
 import requests
 
 from .decoder import decode_url_to_configs
-from .utils import config
+from .utils import config,headers
 import random
 from fastapi import APIRouter,BackgroundTasks
 
@@ -11,7 +11,7 @@ router = APIRouter()
 @router.get('/')
 def getNode()->str:
     getNodeBaseUrl = config["getNodeBaseUrl"]
-    randomSubscribeUrl = requests.get(getNodeBaseUrl).text.strip('"')
+    randomSubscribeUrl = requests.get(getNodeBaseUrl,headers=headers).text.strip('"')
     NodeList = dump_configs(randomSubscribeUrl)
     for i in NodeList:
         print("nodelist包含"+i)
