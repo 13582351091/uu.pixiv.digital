@@ -43,15 +43,18 @@ class ListDecoder(BaseDecoder):
                 (4 - len(_config_str) % 4) * "="
             )
 
-
             if "trojan" in config_str and "0.0.0.0" not in config_str and '美国' not in nameinfo :
                 if "allowInsecure" in config_str:
                      yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+"随机节点"
                 else:
                     yield _encoded_config_str.replace('type=tcp==', '')+"&allowInsecure=1"+"#"+"随机节点"
 
-            if ("vmess" in config_str) and ('倍率提示'not in nameinfo)and('导航' not in nameinfo):
-                yield config_str.replace('allowInsecure=0', 'allowInsecure=1')
+            if ("vmess" in config_str) :
+                vmess_decoded_data = b64decode(_config_str).decode('utf-8')
+                vmess_info_json = json.loads(vmess_decoded_data)
+                vmess_info_str = json.dumps(vmess_info_json,ensure_ascii=False)#不转译中文
+                if ('倍率提示'not in vmess_info_str)and('导航' not in vmess_info_str):
+                    yield config_str.replace('allowInsecure=0', 'allowInsecure=1')
 
 
 
