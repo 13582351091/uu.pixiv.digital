@@ -43,7 +43,7 @@ class ListDecoder(BaseDecoder):
                 (4 - len(_config_str) % 4) * "="
             )
 
-            if "trojan" in config_str and "0.0.0.0" not in config_str and '美国' not in nameinfo :
+            if "trojan" in config_str and "0.0.0.0" not in config_str and '美国' not in nameinfo and '443' not in config_str:
                 if "allowInsecure" in config_str:
                      # yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+"随机节点"
                     yield _encoded_config_str.replace('allowInsecure=0', 'allowInsecure=1').replace('type=tcp==', '')+"#"+nameinfo
