@@ -53,7 +53,7 @@ class ListDecoder(BaseDecoder):
                 vmess_decoded_data = b64decode(_config_str).decode('utf-8')
                 vmess_info_json = json.loads(vmess_decoded_data)
                 vmess_info_str = json.dumps(vmess_info_json,ensure_ascii=False)#不转译中文
-                if ('倍率提示'not in vmess_info_str)and('导航' not in vmess_info_str):
+                if ('倍率提示'not in vmess_info_str)and('导航' not in vmess_info_str) and('443' not in vmess_info_str):
                     yield config_str.replace('allowInsecure=0', 'allowInsecure=1')
 
 
