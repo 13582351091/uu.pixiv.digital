@@ -1,9 +1,10 @@
 {
-  "rewrites": [
-    {
-      "source": "/:match*",
-      "destination": "https://rogerxavier-uu-pixiv-api.hf.space/:match*"
-    }
-
+  "devCommand": "uvicorn server.api:app --host 0.0.0.0 --port 3001",
+  "builds": [
+    {"src": "/server/api.py", "use": "@vercel/python"}
+  ],
+  "routes": [
+    {"src": "/(.*)", "dest": "server/api.py"}
   ]
 }
+
